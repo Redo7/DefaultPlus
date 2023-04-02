@@ -23,7 +23,7 @@ window.addEventListener('onWidgetLoad', function (obj) {
 
     var updateStatus, updateClass;
     if (checkForUpdatesOnWidgetLoad === true) {
-        fetch('https://raw.githubusercontent.com/Redo7/DefaultPlus/main/data.txt')
+        fetch('https://raw.githubusercontent.com/Redo7/DefaultPlus/main/data.json')
             .then(response => response.json()).then((output) => {
                 if (output.widgetVersion > '{{widgetVersion}}') {
                     updateStatus = 'Widget update available';
