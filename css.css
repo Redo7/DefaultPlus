@@ -1,0 +1,115 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css');
+@import url('https://fonts.googleapis.com/css2?family={{fontName}}:wght@100;200;300;400;500;600;700;800;900;1000&display=swap');
+
+body{
+  	font-family: '{{fontName}}', sans-serif;
+  	overflow: hidden;
+  	margin:0;
+  	padding: 0;
+  	font-size: {{fontSize}}px;
+  	color: {{fontColour}};
+}
+
+p{
+    margin: 0;
+}
+
+.main-container{
+  	display: flex;
+  	flex-direction: {{chatDirection}};
+  	justify-content: flex-end;
+  	gap: {{msgGap}}px;
+	width: 100%;
+  	height: 100%
+}
+
+.message-box{
+    display: flex;
+  	width: {{msgStretch}};
+  	max-width: 100%;
+  	align-items: {{alignMessages}};
+  	align-self: {{alignMessages}};
+    flex-direction: column;
+  	/*background: {{msgBackground}};*/
+  	box-sizing: border-box;
+  	border-radius: {{borderRadius}}px;
+}
+
+.user-wrap{
+	display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.username{
+    display: block;
+    font-weight: bold;
+  	color: #8205b4;
+}
+
+.message-wrap{
+	max-width: 100%;
+  	display: inline;
+  	word-wrap: break-word;
+}
+
+.message{
+  	display: inline;
+}
+
+.emote{
+    vertical-align: middle;
+    background-repeat:no-repeat;
+  	background-size: contain;
+  	height: {{emoteSize}}px;
+  	/*aspect-ratio: 1 / 1;*/
+}
+
+.alert-message{
+    font-weight: 900;
+}
+
+.badge-container{
+	display: flex;
+    align-items: center;
+  	gap: {{badgeGap}}px;
+}
+
+.badge{
+	display: inline;
+    height: {{fontSize}}px;
+}
+
+.reply{
+    align-self: {{alignMessages}};
+    background: linear-gradient(90deg, rgba(0,0,0,.2) 0%, rgba(0,0,0,.2) 100%);
+    width: fit-content;
+    padding: 2px 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+  	margin-bottom: 3px;
+}
+
+.pronoun{
+	font-size: 0.8em;
+  	opacity: .75;
+  	align-self: center;
+}
+
+.update-notif{
+    width: 100%;
+    border-radius: 100px;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+}
+
+.success{
+	background: linear-gradient(115deg, rgba(239,189,96,1) 0%, rgba(240,226,103,1) 100%);
+  	color: #814830;
+}
+
+.warning{
+	background: linear-gradient(115deg, rgba(242,113,88,1) 0%, rgba(237,27,83,1) 100%);
+  	color: #fff;
+}
