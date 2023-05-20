@@ -1,6 +1,10 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css');
 @import url('https://fonts.googleapis.com/css2?family={{fontName}}:wght@100;200;300;400;500;600;700;800;900;1000&display=swap');
 
+.animated{
+  animation-duration: 1s;
+}
+
 body{
   	font-family: '{{fontName}}', sans-serif;
   	overflow: hidden;
@@ -102,6 +106,7 @@ p{
     font-weight: 800;
     display: flex;
     justify-content: center;
+  	text-align: center;
 }
 
 .success{

@@ -4,6 +4,7 @@ const replyIcon = '<svg style="transform: scaleX(-1);" xmlns="http://www.w3.org/
 
 window.addEventListener('onWidgetLoad', function (obj) {
     const fieldData = obj.detail.fieldData;
+  	console.log(fieldData)
     messagesLimit = fieldData.msgLimit;
     animationIn = fieldData.animationIn;
     animationOut = fieldData.animationOut;
@@ -26,7 +27,7 @@ window.addEventListener('onWidgetLoad', function (obj) {
         fetch('https://raw.githubusercontent.com/Redo7/DefaultPlus/main/data.json')
             .then(response => response.json()).then((output) => {
                 if (output.widgetVersion > '{{widgetVersion}}') {
-                    updateStatus = 'Widget update available';
+                    updateStatus = 'Widget update available. Download it from https://github.com/Redo7/DefaultPlus/releases';
                   	updateClass = 'warning'
                 } else {
                     updateStatus = 'Widget is up to date';
@@ -444,7 +445,15 @@ function addAlert(text, colour, nameColour, badgeText, sound, soundVolume) {
         <p class="message alert-message">${text}</p>
       </div>
 	</div>`);
-    $(alert).appendTo('.main-container');
+    if (hideAfter !== 999) {
+        $(alert).appendTo('.main-container').delay(hideAfter * 1000).queue(function () {
+            $(this).removeClass(animationIn).addClass(animationOut).delay(1000).queue(function () {
+                $(this).remove()
+            }).dequeue();
+        });
+    } else {
+        $(alert).appendTo('.main-container');
+    }
     if ('{{useMsgShadow}}' === 'true') {
         const msgShadow = `{{msgShadow}}`;
         $('.message-wrap').css({ 'text-shadow': msgShadow });
